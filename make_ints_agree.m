@@ -10,6 +10,7 @@ for i=1:n
   C(i+1,(i-1)*m+1:m*i)=X(1:m,i);
   d((i-1)*m+1:m*i)=Y(1:m,i);
 end
+options=optimoptions(@lsqlin,'Algorithm','active-set');
 a=lsqlin(C,d,[],[],[],[],[],[],[],options);
 
 if show_plot==1
