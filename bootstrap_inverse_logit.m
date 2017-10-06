@@ -4,8 +4,8 @@ function [est,low,high]=bootstrap_inverse_logit(p,confidence,x,y,n_trials,n_repl
 %(x,y) pair. x, a column vector, is the dependent variable. Each corresponding entry of y, 
 %a column vector, gives the number of successes in the n_trials performed
 %at the corresponding x value.
-%n_replacements is the number of samples to be used in each bootstrapping
-%epoch
+%n_replacements is the number of observation to be used in each sample
+%epochs is the number of samples to be used in all
 %confidence is the level of confidence intervals desired (ie 95%).
 
 
