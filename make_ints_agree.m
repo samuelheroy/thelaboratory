@@ -1,8 +1,9 @@
 function [a]=make_ints_agree(X,Y,show_plot)
 %This code is used for simple linear regression on multiple data sets, wherein each line of best fit is constrained to have the same y-intercept. This is useful for finding percolation thresholds, among other things.
-%X is an m x n matrix, where each column represents the m observations of each of the n variates.
-%Y is an m x matrix 
+%X is an m x n matrix, where each column represents the m observations of the independent variable for the n data sets.
+%Y is an m x n matrix, where each column represents the m observations of the dependent variable for the n data sets.
 %If show_plot==1, the plots the resulting regression lines and data.
+%a is a (1+m)-vector, which gives the common y-intercept, and regression coefficient for each variate.
 [m,n]=size(X); %m is the number of data points per variate, n is the number of variates. For this implementation, the number of observations per variate must be the same
 C=[ones(m*n,1) zeros(m*n,n)]; %this will be an m*n x n+1 matrix (we're going to solve Ca=d)
 d=zeros(m*n,1); %this is an m x n vector (just reogranizing the output matrix)
